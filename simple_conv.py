@@ -21,10 +21,7 @@ def conv_helper(fragment, kernel):
             result += fragment[row,col] *  kernel[row,col]
     return result
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3d3bfcf08b4144a7f4b34273c978284f5d82c46b
 def convolution(image, kernel):
     """Aplica una convolucion sin padding (valida) de una dimesion 
     y devuelve la matriz resultante de la operación
@@ -49,11 +46,23 @@ def convolution(image, kernel):
 
 # Cargar la imagen usando OpenCV
 image = cv2.imread(r'c:\Users\anton\Downloads\Prueba1.jpg', cv2.IMREAD_GRAYSCALE)
+# Aumentar el contraste multiplicando por un factor (ejemplo: 1.5)
+image = np.clip(image * 1.5, 0, 255).astype(np.uint8)
 
-# Mostrar la imagen original
+# Mostrar la imagen original y la imagen con contraste aumentado
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
 plt.imshow(image, cmap='gray')
-plt.title("Original Image")
+plt.title("Imagen en escala de grises original")
+
+plt.subplot(1, 2, 2)
+plt.imshow(image, cmap='gray')
+plt.title("Imagen con contraste aumentado")
 plt.show()
+# Mostrar la imagen original
+#plt.imshow(image, cmap='gray')
+#plt.title("Original Image")
+#plt.show()
 
 # Definir un kernel (Sobel X en este caso)
 kernel = np.array([[-1, 0, 1],
@@ -66,4 +75,3 @@ kernel2 = np.array([[-1, -2, -1],
 
 # Aplicar la convolución con el kernel definido
 output_image = convolution(image, kernel)
-output_image2 = convolution(output_image, kernel2)

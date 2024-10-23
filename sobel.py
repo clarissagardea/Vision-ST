@@ -3,15 +3,13 @@ By Abhisek Jana
 code taken from https://github.com/adeveloperdiary/blog/tree/master/Computer_Vision/Sobel_Edge_Detection
 blog http://www.adeveloperdiary.com/data-science/computer-vision/how-to-implement-sobel-edge-detection-using-python-from-scratch/
 """
-#sobel.py
-
 import numpy as np
 import cv2
 import argparse
 import matplotlib.pyplot as plt
 from convolution import convolution
-from gaussian_blur import gaussian_blur
 
+# Sobel edge detection function
 def sobel_edge_detection(image, filter, verbose=False):
     new_image_x = convolution(image, filter, verbose)
 
@@ -43,7 +41,6 @@ def sobel_edge_detection(image, filter, verbose=False):
 
     return gradient_magnitude
 
-
 if __name__ == '__main__':
     # Sobel filter mask/kernel
     filter = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
@@ -59,3 +56,11 @@ if __name__ == '__main__':
     # Use the default image path if none is provided
     if image_path is None:
         image_path = r"D:\ESCUELA\Laboratorio\Vision-ST\image.jpg"
+
+    image = cv2.imread(image_path)
+
+    if image is None:
+        raise FileNotFoundError(f"Image not found at {image_path}")
+
+    # Apply Sobel edge detection
+    sobel_edge_detection(image, filter, verbose=True)

@@ -4,7 +4,6 @@ code taken from https://github.com/adeveloperdiary/blog/tree/master/Computer_Vis
 blog http://www.adeveloperdiary.com/data-science/computer-vision/how-to-implement-sobel-edge-detection-using-python-from-scratch/
 """
 #gaussian_blur.py
-
 import numpy as np
 import cv2
 import argparse
@@ -25,7 +24,7 @@ def gaussian_kernel(size, sigma=1, verbose=False):
 
     if verbose:
         plt.imshow(kernel_2D, interpolation='none', cmap='gray')
-        plt.title("Kernel ( {}X{} )".format(size, size))
+        plt.title(f"Kernel ({size}X{size})")
         plt.show()
 
     return kernel_2D
@@ -39,7 +38,6 @@ if __name__ == '__main__':
     ap.add_argument("-i", "--image", required=False, help="Path to the image")
     args = vars(ap.parse_args())
 
-    # Check if the image path is provided, if not use a default
     if args["image"] is None:
         image_path = r"D:\ESCUELA\Laboratorio\Vision-ST\image.jpg"  # Default image path
     else:
@@ -47,12 +45,9 @@ if __name__ == '__main__':
 
     print(f"Attempting to load image from: {image_path}")  # Debugging step
 
-    # Load the image
     image = cv2.imread(image_path)
     
     if image is None:
         raise FileNotFoundError(f"Image not found at {image_path}")
 
-    # Apply Gaussian Blur
     gaussian_blur(image, 5, verbose=True)
-

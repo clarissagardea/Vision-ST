@@ -21,6 +21,10 @@ def conv_helper(fragment, kernel):
             result += fragment[row,col] *  kernel[row,col]
     return result
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 3d3bfcf08b4144a7f4b34273c978284f5d82c46b
 def convolution(image, kernel):
     """Aplica una convolucion sin padding (valida) de una dimesion 
     y devuelve la matriz resultante de la operación

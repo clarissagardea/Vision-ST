@@ -1,6 +1,10 @@
 # Vision-ST
 Laboratorio de vision para la semana Tec: Herramientas computacionales: el arte de la programación
 
+## Creadores:
+- Clarissa Gardea Coronado
+- Antonino Sandoval
+
 Este repositorio contiene un proyecto de laboratorio cuyo objetivo es detectar números de placas de automóviles mediante procesamiento de imágenes y reconocimiento óptico de caracteres (OCR). Utilizando Python, OpenCV, NumPy y Tesseract OCR, el script aplica técnicas de convolución, padding y saturación de imágenes para mejorar la precisión en la detección de texto.
 
 ## Librerias utilizadas: 

@@ -19,7 +19,7 @@ El padding añade un borde de píxeles a la imagen, permitiendo aplicar la convo
 ### 3. Saturación
 La saturación ajusta la intensidad de los píxeles para mejorar el contraste general de la imagen. En este caso, se aplica un factor de contraste que realza los números en la placa y reduce la interferencia del fondo, aumentando la precisión del OCR.
 
-##Codigos en el repositorio:
+## Codigos en el repositorio:
 ### sobel.py
 Implementa un flitro sobel como metodo de convolucion para una mejor deteccion de bordes
 
